@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show trigger
-        run: echo "Triggered by ${{ github.event_name }}"
+        run echo "Triggered by ${{ github.event_name }}"
 
       - name: Show branch
         run: echo "Branch is ${{ github.ref }}"
