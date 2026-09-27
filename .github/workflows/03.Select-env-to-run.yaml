@@ -1,4 +1,4 @@
-name: Select Environment to Run
+name: 03.Select Environment to Run
 on:
     workflow_dispatch:
       inputs:
