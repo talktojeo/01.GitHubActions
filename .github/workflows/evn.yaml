@@ -1,23 +1,31 @@
 name: environment variable
 on:
     workflow_dispatch:
+      inputs:
+        ENVIRONMENT:
+          description: "Choose an environment"
+          required: true # User must provide a value for an input before the workflow can be started.
+          type: choice
+          options:
+            - "Dev"
+            - "Int"
+            - "Production"
 
 env:
-    GlobalLevel: "can be used in all jobs"
-    MY_AGE: "30"
+    DEPLOY_ENV: ${{ inputs.ENVIRONMENT }}
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     env:
-        JobLevel: "can be used in all steps of this job"
-        MY_NAME: "John Doe"
+      ENV_ONLY_for_job1: "JOB1 VALUE"
     steps:
-      - name: Show global env variable
-        run: echo "GlobalLevel is ${{ env.GlobalLevel }}"
-      - name: Show job env variable
-        run: echo "JobLevel is ${{ env.JobLevel }}"
-      - name: Show step env variable
-        run: echo "MY_AGE is ${{ env.MY_AGE }}"
-      - name: Test JJ
-        run: echo "here is a env variable ${{ env.MY_NAME}}"
+      - name: FiRST JOB
+        run: echo "GlobalLevel is ${{ env.DEPLOY_ENV }}"
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SECOND JOB
+        run: |
+          echo "GlobalLevel is ${{ env.DEPLOY_ENV }}"
+          echo "if Job1 value is available in Job2: ${{ env.ENV_ONLY_for_job1 }}"
