@@ -1,0 +1,13 @@
+name: Basic Job
+on:
+  workflow_dispatch:
+
+jobs:
+  basic-job:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: checkout a repo
+          uses: actions/checkout@v4
+        - name: run a one-line script
+          run: echo "this is the basic a one line script actions have either a run or uses step thats it"
