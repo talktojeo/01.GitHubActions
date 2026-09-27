@@ -21,4 +21,4 @@ jobs:
       - name: running simple script
         run: |
             echo "helo from node"
-            echo "hello from $inputs.message"
+            echo "hello from ${{ inputs.message }}"
