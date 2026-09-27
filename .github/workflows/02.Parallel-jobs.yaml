@@ -1,0 +1,21 @@
+name: Jobs sequence
+on:
+    workflow_dispatch:
+        inputs:
+           Multijob:
+              description: "Choose a job"
+              required: true
+              type: string
+              default: "Job1"
+jobs:
+  Job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job1
+        run: echo "This is Job1"
+
+  Job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job2
+        run: echo "This is Job2"
