@@ -19,3 +19,5 @@ jobs:
         run: echo "JobLevel is ${{ env.JobLevel }}"
       - name: Show step env variable
         run: echo "MY_AGE is ${{ env.MY_AGE }}"
+      - name: Test JJ
+        run: echo "here is a env variable ${{ env.MY_NAME}}"
