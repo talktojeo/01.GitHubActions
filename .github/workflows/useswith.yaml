@@ -7,7 +7,7 @@ on:
         description: "Message to print"
         required: true
         type: string
-        default: "Hello GitHub Actions"
+        default: "Hello GitHub Actions JJ"
 
 jobs:
   'with_inputs':
@@ -17,3 +17,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+
+      - name: running simple script
+        run: |
+            echo "helo from node"
+            echo "hello from $inputs.message"
