@@ -1,0 +1,26 @@
+name: Select Environment to Run
+on:
+    workflow_dispatch:
+      inputs:
+        ENVIRONMENT:
+          description: "Choose an environment"
+          required: true # User must provide a value for an input before the workflow can be started.
+          type: choice
+          options:
+            - "Dev"
+            - "Int"
+            - "Production"
+jobs:
+ job1:
+    name: Dev
+    if: ${{ inputs.ENVIRONMENT == 'Dev' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is Dev Job"
+ job2:
+    name: Int
+    if: ${{ inputs.ENVIRONMENT == 'Int' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Int JOB
+        run: echo "This is Int Job"
