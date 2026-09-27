@@ -1,4 +1,4 @@
-name: Jobs sequence
+name: 02.Parallel jobs
 on:
     workflow_dispatch:
         inputs:

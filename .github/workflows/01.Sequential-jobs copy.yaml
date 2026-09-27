@@ -1,4 +1,4 @@
-name: Jobs sequence
+name: 01. Sequential jobs
 on:
     workflow_dispatch:
         inputs:
@@ -20,4 +20,3 @@ jobs:
     steps:
       - name: Job2
         run: echo "This is Job2"
-
