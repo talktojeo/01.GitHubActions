@@ -1,0 +1,6 @@
+name: Call Child Workflow
+on:
+ workflow_dispatch:
+jobs:
+  call-deployment:
+    uses: ./.github/workflows/05.gitactions-full.yaml
