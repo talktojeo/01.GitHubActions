@@ -10,8 +10,9 @@ jobs:
   steps: 
    - name: Test
      run: |
-       echo $RESOURCE_GROUP "Getting value with simple Dollor"
+       echo $RESOURCE_GROUP "Getting value with simple Dollor Environemnt vlaues"
        echo "value with jinjx syntax ${{ env.RESOURCE_GROUP }} "
-       echo "Getting Value from CONFIGURATION" $AZURE_LOCATION
+       echo "Cannot get CONFIGURATION value with simple dollor" $AZURE_LOCATION
+       echo "CAN get Configuratio Value with ${{ vars.AZURE_LOCATION }}"
 
      
