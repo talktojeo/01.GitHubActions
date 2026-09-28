@@ -1,0 +1,20 @@
+name: Reusable Azure Deployment
+on:
+  workflow_call: # THIS IS WORKFLOW CALL
+    inputs:
+      resource_group:
+        required: true
+        type: string
+      location:
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display deployment information
+        run: |
+          echo "Resource Group: ${{ inputs.resource_group }}"
+          echo "Location: ${{ inputs.location }}"
