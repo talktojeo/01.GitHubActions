@@ -1,4 +1,4 @@
-name: Reusable Azure Deployment
+name: 05.Reusable Azure Deployment
 on:
   workflow_call: # THIS IS WORKFLOW CALL
     inputs:
