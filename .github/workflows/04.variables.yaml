@@ -12,6 +12,6 @@ jobs:
      run: |
        echo "just testing"
        echo $RESOURCE_GROUP "Getting value with simple Dollor"
-       echo "value with jinjx syntax {{ env.RESOURCE_GROUP}}
+       echo "value with jinjx syntax {{ env.RESOURCE_GROUP }}
 
      
