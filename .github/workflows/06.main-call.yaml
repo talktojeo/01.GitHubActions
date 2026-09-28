@@ -4,6 +4,7 @@ on:
 jobs:
   call-deployment:
     uses: ./.github/workflows/05.gitactions-full.yaml
+    run: echo "value from child workflow ${{ steps.inform.outputs.location }}
     with:
       resource_group: "rg-resgrp"
       location: "uksouth"
