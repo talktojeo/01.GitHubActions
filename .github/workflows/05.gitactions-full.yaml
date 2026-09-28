@@ -15,6 +15,7 @@ jobs:
 
     steps:
       - name: Display deployment information
+        id: inform
         run: |
           echo "Resource Group: ${{ inputs.resource_group }}"
           echo "Location: ${{ inputs.location }}"
