@@ -14,5 +14,7 @@ jobs:
        echo "value with jinjx syntax ${{ env.RESOURCE_GROUP }} "
        echo "Cannot get CONFIGURATION value with simple dollor" $AZURE_LOCATION
        echo "CAN get Configuratio Value with ${{ vars.AZURE_LOCATION }}"
+       echo "Get the GITHUB CONTEXT VARIABLES" 
+       echo $github.repository
 
      
