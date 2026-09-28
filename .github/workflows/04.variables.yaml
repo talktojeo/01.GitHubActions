@@ -1,6 +1,7 @@
 name: 04.Variable Tutorial
 on:
- workflow_dispatch: 
+ push:
+   branches: [ main ]
 env: 
   RESOURCE_GROUP: 'res_group1'
   LOCATION: 'uksouth'
@@ -16,5 +17,6 @@ jobs:
        echo "CAN get Configuratio Value with ${{ vars.AZURE_LOCATION }}"
        echo "Get the GITHUB CONTEXT VARIABLES" 
        echo ${{ github.repository }}
+       echo "Getting Secret from REPO ${{ secrets.REPO_SECRET1  }}"
 
      
