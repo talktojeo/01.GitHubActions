@@ -4,3 +4,6 @@ on:
 jobs:
   call-deployment:
     uses: ./.github/workflows/05.gitactions-full.yaml
+    with:
+      resource_group: "rg-resgrp"
+      location: "uksouth"
