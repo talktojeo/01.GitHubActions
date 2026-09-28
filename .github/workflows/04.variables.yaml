@@ -1,0 +1,11 @@
+name: Variable Tutorial
+on:
+ workflow_dispatch: 
+jobs: 
+ testjob:
+  runs-on: ubuntu-22.04
+  steps: 
+   - name: Test
+     run: |
+       echo "just testing"
+     
