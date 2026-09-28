@@ -3,7 +3,7 @@ name: GitHub Actions Learning
 on:
   push:                         # PUSH AND PULL BRANCH
     branches:
-      - main
+      - feature
   workflow_dispatch:           # MANUAL TRIGGER
     inputs:
       message:
