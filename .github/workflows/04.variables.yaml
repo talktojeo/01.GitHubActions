@@ -1,11 +1,17 @@
 name: 04.Variable Tutorial
 on:
  workflow_dispatch: 
+env: 
+  RESOURCE_GROUP: 'res_group1'
+  LOCATION: 'uksouth'
 jobs: 
- variablejob:
+ variablejob_name:
   runs-on: ubuntu-22.04
   steps: 
    - name: Test
      run: |
        echo "just testing"
+       echo $RESOURCE_GROUP "Getting value with simple Dollor"
+       echo "value with jinjx syntax {{ env.RESOURCE_GROUP}}
+
      
