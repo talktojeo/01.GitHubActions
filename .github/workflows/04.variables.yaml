@@ -1,4 +1,4 @@
-name: Variable Tutorial
+name: 04.Variable Tutorial
 on:
  workflow_dispatch: 
 jobs: 
