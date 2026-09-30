@@ -34,8 +34,11 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        working-directory: ./terraform/L100
-        run: terraform plan
+        uses: ./.github/actions/terraform-plan
+        with:
+           working-directory: ./terraform/L100
+          
+        
 
       - name: Terraform Apply
         working-directory: ./terraform/L100
