@@ -1,4 +1,4 @@
-name: Terraform Resource Group
+name: 08.Terraform Resource Group
 
 on:
   workflow_dispatch:
