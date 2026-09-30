@@ -1,0 +1,19 @@
+name: Azure Login
+on:
+  workflow_dispatch:
+jobs:
+  azure-login:
+     runs-on: ubuntu-22.04
+     permissions: 
+       id-token: write
+       contents: read
+     steps:
+       - name: Azure Login
+         uses: azure/Login@v3
+         with:
+           client-id: 
+           tenant-id: 
+           subscription-id: 
+        - name: Verify Azure Login
+          run: |
+            az account show
