@@ -9,11 +9,6 @@ runs:
   using: composite
 
   steps:
-    - name: Terraform Init
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}
-      run: terraform init
-
     - name: Terraform Plan
       shell: bash
       working-directory: ${{ inputs.working-directory }}
