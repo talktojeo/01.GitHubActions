@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
+  Terraform_Plan_Apply: 
     runs-on: ubuntu-22.04
 
     steps:
