@@ -21,4 +21,6 @@ jobs:
       - name: Verify Azure Login
         run: |
             az account show
-            az group list
+            az group create \
+                    --name my-resource-group \
+                    --location uksouth
