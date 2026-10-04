@@ -1,7 +1,10 @@
 name: 00.Terraform_Env_Variables
-
 on:
   workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   Terraform_Env_test:
@@ -35,4 +38,3 @@ jobs:
         - name: Terraform Apply
           working-directory: ./terraform/01.Env_Module
           run: terraform apply -auto-approve
-          
