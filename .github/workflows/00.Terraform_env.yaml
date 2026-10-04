@@ -21,4 +21,18 @@ jobs:
             echo "ARM_CLIENT_ID: $ARM_CLIENT_ID"
             echo "ARM_SUBSCRIPTION_ID: $ARM_SUBSCRIPTION_ID"
             echo "ARM_TENANT_ID: $ARM_TENANT_ID"
-            az account show
+        - name: Setup Terraform
+          uses: hashicorp/setup-terraform@v3
+        - name: Terraform Init
+          working-directory: ./terraform/01.Env_Module
+          run: terraform init
+        - name: Terraform Validate
+          working-directory: ./terraform/01.Env_Module
+          run: terraform validate
+        - name: Terraform Plan
+          working-directory: ./terraform/01.Env_Module
+          run: terraform plan
+        - name: Terraform Apply
+          working-directory: ./terraform/01.Env_Module
+          run: terraform apply -auto-approve
+          
