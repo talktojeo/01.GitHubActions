@@ -26,6 +26,16 @@ jobs:
             echo "ARM_TENANT_ID: $ARM_TENANT_ID"
             echo '${{ toJSON(vars) }}'
 
+        - name: Export GitHub vars to runner environment
+          env:
+            VARS_CONTEXT: ${{ toJSON(vars) }}
+          shell: bash
+          run: |
+            echo "$VARS_CONTEXT" | jq -r '
+              to_entries[]
+              | "\(.key)=\(.value)"
+              ' >> "$GITHUB_ENV"
+
         - name: Setup Terraform
           uses: hashicorp/setup-terraform@v3
         - name: Terraform Init
