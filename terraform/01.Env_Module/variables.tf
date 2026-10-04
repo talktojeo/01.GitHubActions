@@ -1,4 +1,6 @@
-variable "resource_group_name" {
-  default = "rg-terraform-demo"
+variable "RESOURCE_GROUP_NAME" {
+  type    = string
+}
+variable "RESOURCE_LOCATION" {
   type    = string
 }

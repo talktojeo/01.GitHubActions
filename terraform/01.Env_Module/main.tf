@@ -1,5 +1,5 @@
 
 resource "azurerm_resource_group" "demo" {
-  name     = var.resource_group_name
-  location = "UK South"
+  name     = var.RESOURCE_GROUP_NAME
+  location = var.RESOURCE_LOCATION
 }
