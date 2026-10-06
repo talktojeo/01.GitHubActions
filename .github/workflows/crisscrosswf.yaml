@@ -10,10 +10,6 @@ jobs:
     steps:
      - name: buildimage
        run: echo "building ${{ matrix.image }}"
-     - name: buildimage1
-       run: echo "building image 2"
-     - name: buildimage1
-       run: echo "building image 3"
   planjob1:
     runs-on: ubuntu-latest
     needs: builldjob
