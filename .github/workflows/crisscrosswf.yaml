@@ -1,0 +1,9 @@
+name: crisscross
+on:
+  workflow_dispatch:
+jobs:
+  builldjob:
+    step:
+      - name: buildimage1
+        run: echo "building image 1"
+      
