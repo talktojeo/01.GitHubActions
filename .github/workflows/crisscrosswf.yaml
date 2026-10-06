@@ -11,9 +11,15 @@ jobs:
        run: echo "building image 2"
      - name: buildimage1
        run: echo "building image 3"
-  planjob:
+  planjob1:
     runs-on: ubuntu-latest
     needs: builldjob
     steps: 
        - name: planjob1
          run: echo "plan job1"
+  planjob2:
+    runs-on: ubuntu-latest
+    needs: builldjob
+    steps: 
+       - name: planjob2
+         run: echo "plan job2"
