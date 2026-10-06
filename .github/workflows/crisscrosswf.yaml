@@ -3,7 +3,12 @@ on:
   workflow_dispatch:
 jobs:
   builldjob:
-    step:
-      - name: buildimage1
-        run: echo "building image 1"
+    runs-on: ubuntu-latest
+    steps:
+     - name: buildimage1
+       run: echo "building image 1"
+     - name: buildimage1
+       run: echo "building image 2"
+     - name: buildimage1
+       run: echo "building image 3"
       
