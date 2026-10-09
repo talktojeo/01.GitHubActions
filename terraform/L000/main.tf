@@ -1,6 +1,6 @@
 
 resource "azurerm_resource_group" "res_state_storage" {
-  name     = "rg-terraform-demo"
+  name     = "rg-state-storage"
   location = "UK South"
 }
 
