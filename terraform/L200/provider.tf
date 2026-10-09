@@ -11,6 +11,8 @@ terraform {
     storage_account_name = "stterraformdemo1909"
     container_name       = "tfstate"
     key                  = "L200/terraform.tfstate"
+    use_azuread_auth = true
+    use_cli          = true
   }
 }
 
