@@ -5,6 +5,12 @@ terraform {
       version = "~> 4.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "rg-terraform-demo"
+    storage_account_name = "stterraformdemo1909"
+    container_name       = "L000-tfstate"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
