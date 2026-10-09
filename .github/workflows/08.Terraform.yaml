@@ -1,4 +1,4 @@
-name: 08.Terraform Resource Group
+name: 08.Terraform Layer Concept
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  Terraform_Plan_Apply: 
+  Terraform_Plan_Apply:
     runs-on: ubuntu-22.04
 
     steps:
@@ -26,20 +26,18 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        working-directory: ./terraform/L100
+        working-directory: ./terraform/L000
         run: terraform init
 
       - name: Terraform Validate
-        working-directory: ./terraform/L100
+        working-directory: ./terraform/L000
         run: terraform validate
 
       - name: Terraform Plan
         uses: ./.github/workflows/actions/terraform-plan
         with:
-           working-directory: ./terraform/L100
-          
-        
+           working-directory: ./terraform/L000
 
       - name: Terraform Apply
-        working-directory: ./terraform/L100
+        working-directory: ./terraform/L000
         run: terraform apply -auto-approve
