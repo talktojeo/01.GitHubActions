@@ -39,8 +39,7 @@ jobs:
            working-directory: ./terraform/L100
       - name: Terraform Plan Output
         working-directory: ./terraform/L100
-        run: terraform show -no-color
-
+        run: terraform plan show -no-color
       - name: Terraform Apply
         working-directory: ./terraform/L100
         run: terraform apply -auto-approve
