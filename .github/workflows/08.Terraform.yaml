@@ -48,6 +48,25 @@ jobs:
         working-directory: ./terraform/L100
         run: terraform output
 
+      - name: Terraform Init
+        working-directory: ./terraform/L200
+        run: terraform init
+
+      - name: Terraform Validate
+        working-directory: ./terraform/L200
+        run: terraform validate
+
+      - name: Terraform Plan
+        working-directory: ./terraform/L200
+        run: terraform plan
+
+      - name: Terraform Apply
+        working-directory: ./terraform/L200
+        run: terraform apply -auto-approve
+
+      - name: Terraform Output
+        working-directory: ./terraform/L200
+        run: terraform output
 
         #       - name: Terraform Plan
         # uses: ./.github/workflows/actions/terraform-plan
