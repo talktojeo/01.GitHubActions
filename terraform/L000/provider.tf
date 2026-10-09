@@ -5,7 +5,7 @@ terraform {
       version = "~> 4.0"
     }
   }
-  // COMMENT OUT AND CREATE STORAGE ACCOUNT IN L000 AND THEN UNCOMMENT
+  # COMMENT OUT AND CREATE STORAGE ACCOUNT IN L000 AND THEN UNCOMMENT
   backend "azurerm" {
     resource_group_name  = "rg-state-storage"
     storage_account_name = "stterraformdemo1909"
