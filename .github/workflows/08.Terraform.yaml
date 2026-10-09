@@ -29,18 +29,18 @@ jobs:
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
-        working-directory: ./terraform/L000
+        working-directory: ./terraform/100
         run: terraform init
 
       - name: Terraform Validate
-        working-directory: ./terraform/L000
+        working-directory: ./terraform/L100
         run: terraform validate
 
       - name: Terraform Plan
         uses: ./.github/workflows/actions/terraform-plan
         with:
-           working-directory: ./terraform/L000
+           working-directory: ./terraform/L100
 
       - name: Terraform Apply
-        working-directory: ./terraform/L000
+        working-directory: ./terraform/L100
         run: terraform apply -auto-approve
