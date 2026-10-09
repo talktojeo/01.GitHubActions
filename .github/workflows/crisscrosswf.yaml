@@ -1,0 +1,52 @@
+name: crisscross
+on:
+  workflow_dispatch:
+jobs:
+  image1-build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [ amd64,arm64 ]
+    steps:
+     - name: buildimage
+       run: echo "building image1 ${{ matrix.arch }}"
+  
+  image2-build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [ amd64,arm64 ]
+    steps:
+     - name: buildimage
+       run: echo "building image2 ${{ matrix.arch }}"
+
+  image3-build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        arch: [ amd64,arm64 ]
+    steps:
+     - name: buildimage
+       run: echo "building image3 ${{ matrix.arch }}"
+    
+  Testjob1:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [amd64, arm64 ]
+    needs:  
+      - image1-build
+      - image2-build
+      - image3-build
+    steps: 
+       - name: TestJob1
+         run: echo "Test job1"
+  planjob2:
+    runs-on: ubuntu-latest
+    needs:  
+      - image1-build
+      - image2-build
+      - image3-build
+    steps: 
+       - name: TestJob2
+         run: echo "Test Job2"
