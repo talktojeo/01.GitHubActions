@@ -37,9 +37,8 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        uses: ./.github/workflows/actions/terraform-plan
-        with:
-           working-directory: ./terraform/L100
+        working-directory: ./terraform/L100
+        run: terraform plan
 
       - name: Terraform Apply
         working-directory: ./terraform/L100
@@ -48,3 +47,9 @@ jobs:
       - name: Terraform Output
         working-directory: ./terraform/L100
         run: terraform output
+
+
+        #       - name: Terraform Plan
+        # uses: ./.github/workflows/actions/terraform-plan
+        # with:
+        #    working-directory: ./terraform/L100

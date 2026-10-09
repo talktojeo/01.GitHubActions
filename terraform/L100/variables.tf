@@ -4,7 +4,7 @@ variable "resource_group_name" {
   type        = string
   default     = "rg-workload1"
 }
-variable "location" {
+variable "resource_group_location" {
   description = "The Azure region to deploy resources in"
   type        = string
   default     = "UK South"
