@@ -67,6 +67,9 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
+      - name: Terraform Init
+        working-directory: ./terraform/L200
+        run: terraform init
 
       - name: Terraform Validate
         working-directory: ./terraform/L200
